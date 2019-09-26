@@ -5,7 +5,7 @@ from send_mail import send_mail
 
 app = Flask(__name__)
 
-ENV = 'prod'
+ENV = 'dev'
 # development
 if ENV == 'dev':
     app.debug = True

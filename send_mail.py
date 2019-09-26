@@ -2,13 +2,13 @@ import smtplib
 from email.mime.text import MIMEText
 
 def send_mail(customer, dealer, rating, comments):
-    port=255
+    port=2525
     smtp_server = 'smtp.mailtrap.io'
     username = 'e18b0a5be4374c'
     password = '8b9e56dd0b2d45'
     message = f"<h3> New Feedback Submission</h3> <ul><li>Customer: {customer} </li> <li>Dealer: {dealer} </li><li>Rating: {rating} </li><li>Comments: {comments}</li></ul>"
     sender_email = 'email1@example.com'
-    receiver_email = 'email2@example.com'
+    receiver_email = '116b94e2c3-0ffc83@inbox.mailtrap.io'
     msg = MIMEText(message, 'html')
     msg['subject'] = 'Payowners Feedback Form'
     msg['From'] = sender_email
