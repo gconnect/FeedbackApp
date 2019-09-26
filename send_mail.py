@@ -8,7 +8,8 @@ def send_mail(customer, dealer, rating, comments):
     password = '8b9e56dd0b2d45'
     message = f"<h3> New Feedback Submission</h3> <ul><li>Customer: {customer} </li> <li>Dealer: {dealer} </li><li>Rating: {rating} </li><li>Comments: {comments}</li></ul>"
     sender_email = 'email1@example.com'
-    receiver_email = '116b94e2c3-0ffc83@inbox.mailtrap.io'
+    # receiver_email = '116b94e2c3-0ffc83@inbox.mailtrap.io'
+    receiver_email = 'agatevureglory@gmail.com'
     msg = MIMEText(message, 'html')
     msg['subject'] = 'Payowners Feedback Form'
     msg['From'] = sender_email

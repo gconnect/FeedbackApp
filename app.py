@@ -3,9 +3,9 @@ from flask_sqlalchemy import SQLAlchemy
 from send_mail import send_mail
 
 
-app = Flask(__name__)
+app = Flask(__name__ )
 
-ENV = 'prod'
+ENV = 'dev'
 # development
 if ENV == 'dev':
     app.debug = True
@@ -40,7 +40,7 @@ def __init__(self, customer, dealer, rating, comments):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+     return render_template('index.html')
 
 
 @app.route('/submit', methods=['POST'])
@@ -52,7 +52,6 @@ def submit():
         comments = request.form['comments']
         if customer == "" or dealer == "":
             return render_template('index.html', message="Please enter required fields")
-        # print(customer, dealer, rating, comments)
         if db.session.query(Feedback).filter(Feedback.customer == customer).count() == 0:
             data = Feedback(customer= customer, dealer =dealer, rating=rating, comments= comments)
             db.session.add(data)
